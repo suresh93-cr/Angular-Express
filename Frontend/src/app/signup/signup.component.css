@@ -1,0 +1,65 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+h1 {
+color: rgb(12, 15, 12);
+}
+#form{
+border: radius 500px;
+padding-bottom: auto;
+background:rgb(180, 215, 216);
+width:400px;
+float: center;
+margin-left: auto;
+margin-right: auto;
+
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+width: 33%;
+padding: 5px;
+margin: 10px 0 22px 0;
+display: inline-block;
+border: 2px solid #ccc;
+background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+background-color: #ddd;
+outline: none;
+
+}
+
+/* Set a style for all buttons */
+button {
+background-color: #0d6d00;
+color: white;
+padding: 15px 90px;
+margin: 8px 0;
+border: 2px solid #ccc;
+cursor: pointer;
+width: 100%;
+opacity: 0.9;
+}
+.center{
+float: left;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+
+text-align: left;
+background-color: #f44336;
+
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+float: left;
+padding: 5px;
+width: 100px;
+
+}
+.clearfix{
+    margin-left: 80px;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<form action="/action_page.php"></form>
+<form name="myForm" action="/action_page.php" onsubmit="validateForm()" method="post"></form>
+<legend>
+  <h3>Register Your Details</h3>
+</legend>
+
+
+
+<div id="form">
+  <div *ngIf= "errormsg"class="alert alert-warning alert-dismissible fade show text-danger" role="alert">
+    <strong>{{errormsg}}</strong>
+    <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+  </div>
+ 
+  <div form class="container">
+    <form [formGroup]="signupForm" (ngSubmit)="signupUser()">
+
+      <div class="form-group">
+
+        <input type="text" id="fname" name="fname" placeholder="First name*" class="form-
+control" formControlName="firstname">
+
+        <span style="color:red;" *ngIf="firstname && firstname.invalid &&
+firstname.touched">
+          <br>
+          Please Enter First Name</span>
+      </div>
+
+      <div class="form-group">
+
+        <input type="text" id="lname" name="lname" placeholder="Last Name *" class="form-
+control" formControlName="lastname">
+
+        <span style="color:red;" *ngIf="lastname && lastname.invalid &&
+        lastname.touched">
+          <br>
+          Please Enter Last Name</span>
+      </div>
+
+      <div class="form-group">
+
+        <input type="date" style="margin-bottom:15px" id="dob" name="dob" placeholder="dob *" class="form-
+control" formControlName="dob">
+
+        <span style="color:red;" *ngIf="dob && dob.invalid && dob.touched">
+          <br>
+          Please Enter Your Birthday</span>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="email" name="email" placeholder="Email *" class="form-control" formControlName="email">
+        <span style="color:red;" *ngIf="email && email.invalid && email.touched">
+          <br>
+          Please Enter Valid Email Address</span>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="phonenumber" name="phonenumber" placeholder="Phone Number*" class="form-control"
+          formControlName="phonenumber" required minlength="5">
+        <span style="color:red;" *ngIf="phonenumber && phonenumber.invalid &&
+        phonenumber.touched">
+          <br>
+          Please Enter Your Phone Number</span>
+
+      </div>
+
+      <label>
+
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms
+          & Privacy</a>.</p>
+
+      <div class="clearfix">
+
+        <button type="button" class="cancelbtn ml-10" style="text-align: center;"
+          routerLinkActive="activebutton">Cancel</button>
+          
+        <button type="submit" class="signupbtn mr-sm-5">Register</button>
+      
+      </div>
+      

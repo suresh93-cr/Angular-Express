@@ -1,0 +1,52 @@
+<h3>Login:</h3>
+<form action="/action_page.php"></form>
+<form name="myForm" action="/action_page.php" onsubmit="validateForm()"
+method="post"></form>
+<div id="form">
+<div form class="center">
+
+<form [formGroup] = "loginForm"(ngSubmit)="loginUser()">
+
+<div class="form-group">
+
+<input type="text" id="Email" name="Email" placeholder="Enter email" class="form-
+control" formControlName="Email" ><br>
+
+<span style="color:red;" *ngIf="Email && Email.invalid && Email.touched">Please enter
+valid email address</span>
+</div>
+
+<div class="form-group">
+<input type="text" id="password" name="password" placeholder="Enter Reg Id"
+class="form-control" formControlName="password" required minlength="5"><br>
+
+<span style="color:red;" *ngIf="password && password.invalid &&
+password.touched">Please enter valid Password</span>
+</div>
+
+<label>
+<input type="checkbox" checked="checked" name="remember"> Remember me
+</label>
+<br>
+<button [disabled]="loginForm.invalid" type="submit" class="signupbtn">Login</button>
+
+<button type="button" onclick="document.getElementById('id01').style.display='none'"
+class="cancelbtn">Cancel</button>
+
+<br>
+
+<br>
+<span class="psw">Forgot <a href="#">password?</a></span>
+
+<script>
+// Get the modal
+
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+}
+</script>
